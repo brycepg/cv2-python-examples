@@ -86,7 +86,7 @@ if __name__ == '__main__':
         if(is_sucessfully_read):
             cv2.imshow("Camera Feed", img)
         else:
-            print "Cannot read video capture object. Quitting..."
+            print "Cannot read video capture object from %s. Quitting..." % capture
             break
 
         # The waitKey function is odd because it has two functions.
