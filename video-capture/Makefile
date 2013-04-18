@@ -1,8 +1,11 @@
 files=drop.avi video-capture-example.py
 folder=video-capture
-zip=$(folder).zip
+ver=1.0
+zip=$(folder)-$(ver).zip
 
-zip: $(files)
+zip: $(zip)
+
+$(zip):$(files)
 	mkdir -p $(folder)
 	cp $(files) $(folder)
 	zip -r $(zip) $(folder)
