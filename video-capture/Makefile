@@ -10,5 +10,6 @@ $(zip):$(files)
 	cp $(files) $(folder)
 	zip -r $(zip) $(folder)
 
+
 clean:
-	rm -r $(folder)
+	rm -fr $(folder) $(zip)
