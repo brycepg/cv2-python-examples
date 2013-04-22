@@ -70,7 +70,6 @@ if __name__ == '__main__':
         print_usage()
         exit(1)
 
-    # http://askville.amazon.com/open-avi-file-opencv/AnswerViewer.do?requestId=60162829
     video_capture = cv2.VideoCapture(capture)
 
     while True:
