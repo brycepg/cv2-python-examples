@@ -6,12 +6,11 @@ then display it onto a window
 
 Supply the argument 
     'h' to view the http video file
-    'l' to view the local video file
-    'u' to use a usb camera device(not included)
+    'l' to view the local video file (see script)
+    'u' to use a usb camera device or webcam(not included)
 
 Examples:
     python video-capture-example.py h
-    python video-capture-example.py l
     python video-capture-example.py u
 
 """
@@ -23,8 +22,9 @@ import sys
 # (this is a live feed)
 http_video_file = "http://myapplecam.com/mjpg/video.mjpg"
 
-# This is a locally saved file
-local_video_file = "drop.avi"
+# OpenCV can also read saved video files
+#   but it'll take some work installing codecs for your system
+local_video_file = ""
 
 # This will select the first initilized camera device -- 
 #   either a integrated webcam or a usb device
@@ -56,7 +56,6 @@ if __name__ == '__main__':
 
     # Note: in cv2 the VideoCapture function can be used to create feeds from 
     #   both a usb device or a file 
-
     capture = ""
     if video_file_type == 'h':
         capture = http_video_file
