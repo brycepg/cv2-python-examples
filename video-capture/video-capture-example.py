@@ -22,7 +22,7 @@ import sys
 # (this is a live feed)
 http_video_file = "http://myapplecam.com/mjpg/video.mjpg"
 
-# OpenCV can also read saved video files
+# OpenCV can also read some saved video files
 #   but it'll take some work installing codecs for your system
 local_video_file = ""
 
@@ -70,6 +70,7 @@ if __name__ == '__main__':
         print_usage()
         exit(1)
 
+    # The VideoCapture method can take a variety of arguments 
     video_capture = cv2.VideoCapture(capture)
 
     while True:
@@ -77,10 +78,11 @@ if __name__ == '__main__':
         # The video capture object can then be used to read frame by frame
         #   The img is literaly an image
         # is_sucessfuly_read is a boolean which returns true or false depending
-        #   on weather the next frame is sucessfully grabbed.
+        #   on whether the next frame is sucessfully grabbed.
         is_sucessfully_read, img = video_capture.read()
 
-        # is_sucessfuly_read will return false when the drop.avi file ends
+        # is_sucessfuly_read will return false when the a file ends, or is no 
+        #   longer available, or has never been available
         if(is_sucessfully_read):
             cv2.imshow("Camera Feed", img)
         else:
